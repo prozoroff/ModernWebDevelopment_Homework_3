@@ -20,6 +20,18 @@
           controllerAs: 'ctrl',
           title: title('Search')
         })
+        .when('/product/:productId', {
+            templateUrl: 'views/product.html',
+            controller: 'ProductDetailsController',
+            controllerAs: 'ctrl',
+            title: title('Details'),
+            resolve: {
+                product: ['$route', 'ProductService', function ($route, productService) {
+                    var productId = parseInt($route.current.params.productId);
+                    return productService.getProductById(productId);
+                }]
+            }
+        })
         .otherwise({
            redirectTo: '/'
          });

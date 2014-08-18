@@ -2,3 +2,17 @@
 body {
   margin: 0;
 }
+
+.separator{
+    height: 2px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: darkgray;
+}
+
+.main-img{
+    height: 150px;
+}
+.thumb-img{
+    height: 100px;
+}
