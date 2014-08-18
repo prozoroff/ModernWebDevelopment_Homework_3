@@ -8,7 +8,7 @@
         </ol>
     </div>
 
-    <div class="col-xs-12 col-sm-2 invisible-xs">
+    <div class="col-xs-12 col-sm-2 invisible-xs find-more">
         <button ng-hide="ctrl.isSearchFormVisible" ng-click="ctrl.isSearchFormVisible = true"  class="btn btn-default btn-block">Find more</button>
         <button ng-show="ctrl.isSearchFormVisible" ng-click="ctrl.isSearchFormVisible = false" class="close" aria-hidden="true">&times;</button>
     </div>
@@ -17,8 +17,16 @@
     <div class="separator col-md-12 col-sm-12 hidden-xs"></div>
 
     <div class="row col-md-12">
-        <div class="col-md-5 col-sm-6 col-xs-12 text-center">
+
+        <div class="col-md-5 col-sm-6 col-xs-12">
+
+        <div class="col-md-12 col-sm-12 col-xs-5 text-center row">
             <img ng-src="images/{{ ctrl.product.thumb }}" alt="" class="img-responsive center-block main-img">
+        </div>
+            <h1 class="hidden-lg hidden-md hidden-sm">{{ ctrl.product.title }}</h1>
+            <p class="hidden-lg hidden-md hidden-sm">Seller: <b>starmotors</b> (135) 100% Positive feedback</p>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
             <hr>
             <div class="row">
                 <div class="col-xs-4">
@@ -38,22 +46,28 @@
             </h5>
         </div>
 
+        </div>
+
         <div class="col-md-7 col-sm-6 col-lg-7">
             <div class="col-md-12 col-xs-12">
-                <h1>{{ ctrl.product.title }}</h1>
-                <p>Seller: <b>starmotors</b> (135) 100% Positive feedback</p>
+                <h1 class="hidden-xs">{{ ctrl.product.title }}</h1>
+                <p class="hidden-xs">Seller: <b>starmotors</b> (135) 100% Positive feedback</p>
             </div>
             </h4>
             <div class="col-sm-12 col-md-7">
-                <h4><b>Current Price</b>:</h4>
+
+                    <h4><b>Current Price</b>:</h4>
+
                 <h3><b> {{ ctrl.product.price | currency }} [5&nbsp;bids]</b></h3>
 
-                <p>
-                    <b>Time left</b>: {{ ctrl.product.timeleft }}h
-                </p>
-                <p>
-                    <b>Today</b>: {{ ctrl.date | date:'hh.mm' }}
-                </p>
+                        <p>
+                            <b>Time left</b>: {{ ctrl.product.timeleft }}h
+                        </p>
+
+                        <p class="hidden-xs">
+                            <b>Today</b>: {{ ctrl.date | date:'hh.mm' }}
+                        </p>
+
             </div>
             <div class="col-sm-12 col-md-5 col-xs-12">
                 <form class="form-horizontal" role="form">
